@@ -2,6 +2,8 @@ package lab2.level;
 
 import java.util.Observable;
 
+
+
 public class Level extends Observable {
 	private Room r;
 	private int x;
@@ -11,6 +13,7 @@ public class Level extends Observable {
 		this.r = r;
 		this.x = x;
 		this.y = y;
+		
 	}
 	
 	public void firstLocation(Room r) {

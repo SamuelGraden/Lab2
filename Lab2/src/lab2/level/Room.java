@@ -24,6 +24,26 @@ public class Room {
 			
 	}
 	
+	public Color getColor() {
+		return color;
+	}
+
+	public int getDx() {
+		return dx;
+	}
+
+	public int getDy() {
+		return dy;
+	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
 	public void 	connectNorthTo(Room r) {
 		this.northRoom = r;
 	}
