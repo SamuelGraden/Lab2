@@ -15,12 +15,10 @@ public class Room {
 	private Room southRoom;
 	private Room westRoom;
 	
-	public Room(Color color, int dx, int dy, int posX, int posY) {
+	public Room(Color color, int dx, int dy) {
 		this.color = color;
 		this.dx = dx;
 		this.dy = dy;
-		this.posX = posX;
-		this.posY = posY;
 			
 	}
 	
@@ -39,12 +37,21 @@ public class Room {
 	public int getPosX() {
 		return posX;
 	}
-
+	
+	public void setPosX(int posX) {
+		this.posX = posX;
+		
+	}
+	
 	public int getPosY() {
 		return posY;
 	}
+	
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
 
-	public void 	connectNorthTo(Room r) {
+	public void connectNorthTo(Room r) {
 		this.northRoom = r;
 	}
 	public void connectWestTo(Room r) {
