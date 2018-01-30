@@ -10,7 +10,7 @@ public class Driver{
 	
 	public void run() {
 		Level lv=new Level();
-		int scaling = 20;
+		int scaling = 10;
 		Room r1 = new Room(Color.green,8*scaling,8*scaling);
 		lv.place(r1, 1*scaling,21*scaling );
 		
@@ -24,10 +24,12 @@ public class Driver{
 		lv.place(r4, 26*scaling, 25*scaling);
 		
 		Room r5 = new Room(Color.green, 9*scaling,9*scaling);
-		lv.place(r5, 12*scaling, 16*scaling);
+		lv.place(r5, 26*scaling, 15*scaling);
 		
 		Room r6 = new Room(Color.green, 19*scaling, 12*scaling);
 		lv.place(r6, 10*scaling, 2*scaling);
+		
+		LevelGUI gui = new LevelGUI(lv,"EDVINS HENTAI SIM");
 		
 	/*	while(true) {
 			Room tempRoom = new Room( Color.blue, (int)(Math.random()*15),(int)(Math.random()*15) );
