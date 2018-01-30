@@ -69,6 +69,73 @@ public class LevelGUI implements Observer {
 				g.fillRect(roomlist.get(i).getPosX(), roomlist.get(i).getPosY(), roomlist.get(i).getDx(), roomlist.get(i).getDy());
 				g.setColor(roomlist.get(i).getColor());
 				g.fillRect(roomlist.get(i).getPosX()+2, roomlist.get(i).getPosY()+2, roomlist.get(i).getDx()-4, roomlist.get(i).getDy()-4);
+				for(int j=1;j<=4;j++) {
+					if(roomlist.get(i).isConnected(j)) {
+						if(j==1) {
+							int startX=roomlist.get(i).getPosX()+(roomlist.get(i).getDx()/2);
+							int startY=roomlist.get(i).getPosY();
+							int endX=roomlist.get(i).getConnected(j).getPosX()+(roomlist.get(i).getConnected(j).getDx()/2);
+							int endY=roomlist.get(i).getConnected(j).getPosY()+roomlist.get(i).getConnected(j).getDy();
+						
+							for(int k=5;k>=-5;k--) {
+								if(k==5||k==-5) {
+									g.setColor(Color.black);
+								} else {
+									g.setColor(Color.blue);
+								}
+								g.drawLine(startX+k, startY+2, endX+k, endY-2);
+							}
+						}
+						if(j==2) {
+							int startX=roomlist.get(i).getPosX();
+							int startY=roomlist.get(i).getPosY()+roomlist.get(i).getDy()/2;
+							int endX=roomlist.get(i).getConnected(j).getPosX()+roomlist.get(i).getConnected(j).getDx();
+							int endY=roomlist.get(i).getConnected(j).getPosY()+roomlist.get(i).getConnected(j).getDy()/2;
+						
+							for(int k=5;k>=-5;k--) {
+								if(k==5||k==-5) {
+									g.setColor(Color.black);
+								} else {
+									g.setColor(Color.blue);
+								}
+								g.drawLine(startX+2, startY+k, endX-2, endY+k);
+							}
+						}
+						if(j==3) {
+							int startX=roomlist.get(i).getPosX()+(roomlist.get(i).getDx()/2);
+							int startY=roomlist.get(i).getPosY()+roomlist.get(i).getDy();
+							int endX=roomlist.get(i).getConnected(j).getPosX()+(roomlist.get(i).getConnected(j).getDx()/2);
+							int endY=roomlist.get(i).getConnected(j).getPosY();
+							
+							for(int k=5;k>=-5;k--) {
+								if(k==5||k==-5) {
+									g.setColor(Color.black);
+								} else {
+									g.setColor(Color.blue);
+								}
+								g.drawLine(startX+k, startY-2, endX+k, endY+2);
+							}
+						}
+						if(j==4) {
+							int startX=roomlist.get(i).getPosX()+roomlist.get(i).getDx();
+							int startY=roomlist.get(i).getPosY()+(roomlist.get(i).getDy()/2);
+							int endX=roomlist.get(i).getConnected(j).getPosX();
+							int endY=roomlist.get(i).getConnected(j).getPosY()+roomlist.get(i).getConnected(j).getDy()/2;
+							
+							for(int k=5;k>=-5;k--) {
+								if(k==5||k==-5) {
+									g.setColor(Color.black);
+								} else {
+									g.setColor(Color.blue);
+								}
+								g.drawLine(startX-2, startY+k, endX+2, endY+k);
+							}
+							
+							
+							
+						}
+					}
+				}
 			}
 		}
 		private void clearBackdrop(Graphics g) {

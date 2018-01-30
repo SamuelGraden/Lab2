@@ -78,23 +78,13 @@ public class Level extends Observable {
 				}
 			}
 		}
+		setChanged();
+		notifyObservers();
 	}
 	
 	public ArrayList<Room> getRoomList() {
 		return this.roomList;
 	}
-	
-	/*public void addObserver(Observer o) {
-		
-	}
-	
-	protected void setChanged(){
-		
-	}
-	
-	protected void notifyObserver() {
-		
-	}*/
 	
 }
 

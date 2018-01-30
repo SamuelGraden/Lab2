@@ -111,4 +111,34 @@ public class Room {
 			r.connectNorthTo(this);
 		}
 	}
+	
+	Room getConnected(int dir) {
+		switch(dir) {
+		case 1:
+			return northRoom;
+		case 2:
+			return westRoom;
+		case 3:
+			return southRoom;
+		case 4:
+			return eastRoom;
+		default:
+			return null;
+		}
+	}
+	
+	public boolean isConnected(int dir) {
+		switch(dir) {
+		case 1:
+			return northRoom!=null?true:false;
+		case 2:
+			return westRoom!=null?true:false;
+		case 3:
+			return southRoom!=null?true:false;
+		case 4:
+			return eastRoom!=null?true:false;
+		default:
+			return false;
+		}
+	}
 }
