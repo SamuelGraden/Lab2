@@ -19,8 +19,8 @@ public class Level extends Observable {
 		//Tests if the middle of the "to be placed room" is within the area of all of previous rooms + half of the placed room.
 		boolean placement=true;
 		for(int i=0;i<roomList.size();i++) {
-			if(((roomList.get(i).getPosX()-dimX)<(x+dimX) && (roomList.get(i).getPosX()+roomList.get(i).getDx()+dimX)<(x+dimX))) {
-				if(((roomList.get(i).getPosY()-dimY)<(y+dimY) && (roomList.get(i).getPosY()+roomList.get(i).getDy()+dimY)<(y+dimY))) {
+			if(((roomList.get(i).getPosX()-dimX)<(x+dimX) && (roomList.get(i).getPosX()+roomList.get(i).getDx()+dimX)>(x+dimX))) {
+				if(((roomList.get(i).getPosY()-dimY)<(y+dimY) && (roomList.get(i).getPosY()+roomList.get(i).getDy()+dimY)>(y+dimY))) {
 					placement=false;
 				}
 			}
