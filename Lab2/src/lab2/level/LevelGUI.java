@@ -28,7 +28,7 @@ public class LevelGUI implements Observer {
 		
 		// TODO: You should change 200 to a value 
 		// depending on the size of the level
-		d = new Display(lv,1000,640);
+		d = new Display(lv,800,800);
 		
 		frame.getContentPane().add(d);
 		frame.pack();
@@ -72,12 +72,12 @@ public class LevelGUI implements Observer {
 				}
 				g.fillRect(roomlist.get(i).getPosX(), roomlist.get(i).getPosY(), roomlist.get(i).getDx(), roomlist.get(i).getDy());
 				g.setColor(roomlist.get(i).getColor());
-				g.fillRect(roomlist.get(i).getPosX()+2, roomlist.get(i).getPosY()+2, roomlist.get(i).getDx()-2, roomlist.get(i).getDy()-2);
+				g.fillRect(roomlist.get(i).getPosX()+2, roomlist.get(i).getPosY()+2, roomlist.get(i).getDx()-4, roomlist.get(i).getDy()-4);
 			}
 		}
 		private void clearBackdrop(Graphics g) {
 			g.setColor(Color.black);
-			g.fillRect(0, 0, 1000, 640);
+			g.fillRect(0, 0, 8000, 800);
 			
 		}
 		
