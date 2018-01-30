@@ -14,7 +14,7 @@ public class Driver{
 		LevelGUI lGUI=new LevelGUI(lv,"Samuel är en dumm programmerare");
 		while(true) {
 			Room tempRoom = new Room( Color.blue, (int)(Math.random()*15),(int)(Math.random()*15) );
-			if( lv.place(tempRoom, (int)(Math.random()*100),(int)(Math.random()*100)) ){
+			if( lv.place(tempRoom, (int)(Math.random()*1000),(int)(Math.random()*1000)) ){
 						
 			}
 		}

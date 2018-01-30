@@ -91,6 +91,23 @@ public class LevelGUI implements Observer {
 	 		}
 
 	 		public void keyTyped(KeyEvent event) {
+	 			switch(event.getKeyCode()) {
+	 			case KeyEvent.VK_W:{
+	 				break;
+	 			}
+	 			case KeyEvent.VK_A:{
+	 				break;
+	 			}
+	 			case KeyEvent.VK_S:{
+	 				break;
+	 			}
+	 			case KeyEvent.VK_D:{
+	 				
+	 			}
+	 			default:{
+	 				
+	 			}
+	 			}
 	 		}
 	 	}
 
