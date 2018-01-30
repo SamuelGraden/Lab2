@@ -11,7 +11,6 @@ public class Level extends Observable {
 	public Level() {
 		roomList=new ArrayList<Room>();
 	}
-	
 	public boolean place(Room r, int x, int y)  {
 		if(!placeactive)return false;
 		int dimX=r.getDx()/2;
