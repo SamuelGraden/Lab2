@@ -28,7 +28,7 @@ public class LevelGUI implements Observer {
 		
 		// TODO: You should change 200 to a value 
 		// depending on the size of the level
-		d = new Display(lv,200,200);
+		d = new Display(lv,1000,640);
 		
 		frame.getContentPane().add(d);
 		frame.pack();
@@ -58,6 +58,11 @@ public class LevelGUI implements Observer {
 		
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
+			clearBackdrop(g);
+			drawRoom(g);
+		}
+		
+		private void drawRoom(Graphics g) {
 			ArrayList<Room> roomlist=lv.getRoomList();
 			for(int i=0;i<roomlist.size();i++) {
 				if(roomlist.get(i).isPlayer()) {
@@ -69,6 +74,11 @@ public class LevelGUI implements Observer {
 				g.setColor(roomlist.get(i).getColor());
 				g.fillRect(roomlist.get(i).getPosX()+2, roomlist.get(i).getPosY()+2, roomlist.get(i).getDx()-2, roomlist.get(i).getDy()-2);
 			}
+		}
+		private void clearBackdrop(Graphics g) {
+			g.setColor(Color.black);
+			g.fillRect(0, 0, 1000, 640);
+			
 		}
 		
 	 	private class Listener implements KeyListener {
