@@ -1,7 +1,8 @@
 package lab2.level;
 import java.util.ArrayList;
-import java.util.Observable;
 
+import java.util.Observable;
+import java.util.Observer;
 
 public class Level extends Observable {
 	private ArrayList<Room> roomList;
@@ -40,6 +41,18 @@ public class Level extends Observable {
 	public ArrayList<Room> getRoomList() {
 		return this.roomList;
 	}
+	
+	/*public void addObserver(Observer o) {
+		
+	}
+	
+	protected void setChanged(){
+		
+	}
+	
+	protected void notifyObserver() {
+		
+	}*/
 	
 }
 

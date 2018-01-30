@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -20,6 +21,7 @@ public class LevelGUI implements Observer {
 	public LevelGUI(Level level, String name) {
 		
 		this.lv = level;
+		this.lv.addObserver(this);
 		
 		JFrame frame = new JFrame(name);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -36,7 +38,7 @@ public class LevelGUI implements Observer {
 	
 	
 	public void update(Observable arg0, Object arg1) {
-		
+		d.repaint();
 	}
 	
 	private class Display extends JPanel {
@@ -56,13 +58,19 @@ public class LevelGUI implements Observer {
 		
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			
+			ArrayList<Room> roomlist=lv.getRoomList();
+			for(int i=0;i<roomlist.size();i++) {
+				if(roomlist.get(i).isPlayer()) {
+					g.setColor(Color.blue);
+				} else {
+					g.setColor(Color.green);
+				}
+				g.fillRect(roomlist.get(i).getPosX(), roomlist.get(i).getPosY(), roomlist.get(i).getDx(), roomlist.get(i).getDy());
+				g.setColor(roomlist.get(i).getColor());
+				g.fillRect(roomlist.get(i).getPosX()+2, roomlist.get(i).getPosY()+2, roomlist.get(i).getDx()-2, roomlist.get(i).getDy()-2);
+			}
 		}
 		
-		private void paintRect(int posx,int posy,int dx,int dy) {
-			
-		}
-
 	 	private class Listener implements KeyListener {
 
 	 		

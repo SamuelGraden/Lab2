@@ -9,6 +9,7 @@ public class Room {
 	
 	private int posX;
 	private int posY;
+	private boolean isPlayer=false;
 	
 	private Room northRoom;
 	private Room eastRoom;
@@ -39,12 +40,19 @@ public class Room {
 	}
 	
 	public void setPosX(int posX) {
-		this.posX = posX;
-		
+		this.posX = posX;	
 	}
 	
 	public int getPosY() {
 		return posY;
+	}
+	
+	public boolean isPlayer() {
+		return isPlayer;
+	}
+	
+	public void setisPlayer() {
+		isPlayer=true;
 	}
 	
 	public void setPosY(int posY) {
@@ -53,14 +61,18 @@ public class Room {
 
 	public void connectNorthTo(Room r) {
 		this.northRoom = r;
+		r.connectSouthTo(this);
 	}
 	public void connectWestTo(Room r) {
 		this.westRoom = r;
+		r.connectEastTo(this);
 	}
 	public void connectEastTo(Room r) {
 		this.eastRoom = r;
+		r.connectWestTo(this);
 	}
 	public void connectSouthTo(Room r) {
 		this.southRoom = r;
+		r.connectNorthTo(this);
 	}
 }
