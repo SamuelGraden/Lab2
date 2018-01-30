@@ -5,7 +5,7 @@ import java.util.Observable;
 
 
 public class Level extends Observable {
-	ArrayList<Room> roomList;
+	private ArrayList<Room> roomList;
 	
 	public Level() {
 		roomList=new ArrayList<Room>();
@@ -33,6 +33,9 @@ public class Level extends Observable {
 	
 	public void firstLocation(Room r) {
 			
+	}
+	public ArrayList<Room> getRoomList() {
+		return this.roomList;
 	}
 	
 }
