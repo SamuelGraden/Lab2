@@ -55,10 +55,37 @@ public class Room {
 		return isPlayer;
 	}
 
-	public void setisPlayer() {
+	void setisPlayer() {
 		isPlayer=true;
 	}
-
+	
+	void moveNorth() {
+		if(this.northRoom!=null) {
+			this.northRoom.setisPlayer();
+			this.isPlayer=false;
+		}
+	}
+	
+	void moveWest() {
+		if(this.westRoom!=null) {
+			this.westRoom.setisPlayer();
+			this.isPlayer=false;
+		}
+	}
+	
+	void moveSouth() {
+		if(this.southRoom!=null) {
+			this.southRoom.setisPlayer();
+			this.isPlayer=false;
+		}
+	}
+	
+	void moveEast() {
+		if(this.eastRoom!=null) {
+			this.eastRoom.setisPlayer();
+			this.isPlayer=false;
+		}
+	}
 
 	public void connectNorthTo(Room r) {
 		if(this.northRoom==null) {

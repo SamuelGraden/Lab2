@@ -34,8 +34,50 @@ public class Level extends Observable {
 	}
 	
 	public void firstLocation(Room r) {
-		
+		roomList.get(roomList.indexOf(r)).setisPlayer();
 		placeactive=false;
+	}
+	
+	public void connect(Room first,Room connect,int dir) {
+		switch (dir) {
+		case 1:
+			roomList.get(roomList.indexOf(first)).connectNorthTo(connect);
+			break;
+		case 2:
+			roomList.get(roomList.indexOf(first)).connectWestTo(connect);
+			break;
+		case 3:
+			roomList.get(roomList.indexOf(first)).connectSouthTo(connect);
+			break;
+		case 4:
+			roomList.get(roomList.indexOf(first)).connectEastTo(connect);
+			break;
+		default:
+			break;
+		}
+	}
+	
+	void move(int dir) {
+		force:for(int i=0;i<roomList.size();i++) {
+			if(roomList.get(i).isPlayer()) {
+				switch (dir) {
+				case 1:
+					roomList.get(i).moveNorth();
+					break force;
+				case 2:
+					roomList.get(i).moveWest();
+					break force;
+				case 3:
+					roomList.get(i).moveSouth();
+					break force;
+				case 4:
+					roomList.get(i).moveEast();
+					break force;
+				default:
+					break force;
+				}
+			}
+		}
 	}
 	
 	public ArrayList<Room> getRoomList() {

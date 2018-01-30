@@ -86,17 +86,21 @@ public class LevelGUI implements Observer {
 			}
 
 			public void keyTyped(KeyEvent event) {
-				switch(event.getKeyCode()) {
-				case KeyEvent.VK_W:{
+				switch(event.getKeyChar()) {
+				case 'w':{
+					lv.move(1);
 					break;
 				}
-				case KeyEvent.VK_A:{
+				case 'a':{
+					lv.move(2);
 					break;
 				}
-				case KeyEvent.VK_S:{
+				case 's':{
+					lv.move(3);
 					break;
 				}
-				case KeyEvent.VK_D:{
+				case 'd':{
+					lv.move(4);
 					break;
 				}
 				default:{

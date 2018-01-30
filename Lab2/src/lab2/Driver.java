@@ -29,6 +29,14 @@ public class Driver{
 		Room r6 = new Room(Color.green, 19*scaling, 12*scaling);
 		lv.place(r6, 10*scaling, 2*scaling);
 		
+		lv.firstLocation(r4);
+		lv.connect(r1, r2, 4);
+		lv.connect(r2, r6, 1);
+		lv.connect(r2, r3, 3);
+		lv.connect(r3, r4, 4);
+		lv.connect(r4, r5, 1);
+		
+		
 		LevelGUI gui = new LevelGUI(lv,"EDVINS HENTAI SIM");
 	/*	while(true) {
 			Room tempRoom = new Room( Color.blue, (int)(Math.random()*15),(int)(Math.random()*15) );
