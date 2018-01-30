@@ -11,10 +11,12 @@ public class Driver{
 	
 	public void run() {
 		Level lv=new Level();
-		Room testRoom =  new Room(Color.black, 10, 10);
-		System.out.print(lv.place(testRoom, 0,0));
-		Room test2Room = new Room(Color.blue, 10,10);
-		System.out.print(lv.place(test2Room, 2, 2));
+		while(true) {
+			Room tempRoom = new Room( Color.blue, (int)(Math.random()*15),(int)(Math.random()*15) );
+			if( lv.place(tempRoom, (int)(Math.random()*100),(int)(Math.random()*100)) ){
+						
+			}
+		}
 		
 	}
 }

@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 
-
 public class Level extends Observable {
 	private ArrayList<Room> roomList;
 	private boolean placeactive=true;
