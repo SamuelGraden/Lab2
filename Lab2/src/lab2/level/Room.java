@@ -9,7 +9,7 @@ public class Room {
 
 	private int posX;
 	private int posY;
-	private boolean isPlayer=false;
+	private boolean isPlayer = false;
 
 	private Room northRoom;
 	private Room eastRoom;
@@ -22,7 +22,7 @@ public class Room {
 		this.dy = dy;
 
 	}
-	
+
 	public Color getColor() {
 		return color;
 	}
@@ -40,7 +40,7 @@ public class Room {
 	}
 
 	public void setPosX(int posX) {
-		this.posX = posX;	
+		this.posX = posX;
 	}
 
 	public int getPosY() {
@@ -56,64 +56,67 @@ public class Room {
 	}
 
 	void setisPlayer() {
-		isPlayer=true;
+		isPlayer = true;
 	}
-	
+
 	void moveNorth() {
-		if(this.northRoom!=null) {
+		if (this.northRoom != null) {
 			this.northRoom.setisPlayer();
-			this.isPlayer=false;
+			this.isPlayer = false;
 		}
 	}
-	
+
 	void moveWest() {
-		if(this.westRoom!=null) {
+		if (this.westRoom != null) {
 			this.westRoom.setisPlayer();
-			this.isPlayer=false;
+			this.isPlayer = false;
 		}
 	}
-	
+
 	void moveSouth() {
-		if(this.southRoom!=null) {
+		if (this.southRoom != null) {
 			this.southRoom.setisPlayer();
-			this.isPlayer=false;
+			this.isPlayer = false;
 		}
 	}
-	
+
 	void moveEast() {
-		if(this.eastRoom!=null) {
+		if (this.eastRoom != null) {
 			this.eastRoom.setisPlayer();
-			this.isPlayer=false;
+			this.isPlayer = false;
 		}
 	}
 
 	public void connectNorthTo(Room r) {
-		if(this.northRoom==null) {
-			this.northRoom = r;
-			r.connectSouthTo(this);
-		}
+		// if(this.northRoom==null) {
+		this.northRoom = r;
+		// r.connectSouthTo(this);
+		// }
 	}
+
 	public void connectWestTo(Room r) {
-		if(this.westRoom==null) {
-			this.westRoom = r;
-			r.connectEastTo(this);
-		}
+		// if(this.westRoom==null) {
+		this.westRoom = r;
+		// r.connectEastTo(this);
+		// }
 	}
+
 	public void connectEastTo(Room r) {
-		if(this.eastRoom==null) {
-			this.eastRoom = r;
-			r.connectWestTo(this);
-		}
+		// if(this.eastRoom==null) {
+		this.eastRoom = r;
+		// r.connectWestTo(this);
+		// }
 	}
+
 	public void connectSouthTo(Room r) {
-		if(this.southRoom==null) {
-			this.southRoom = r;
-			r.connectNorthTo(this);
-		}
+		// if(this.southRoom==null) {
+		this.southRoom = r;
+		// r.connectNorthTo(this);
+		// }
 	}
-	
+
 	Room getConnected(int dir) {
-		switch(dir) {
+		switch (dir) {
 		case 1:
 			return northRoom;
 		case 2:
@@ -126,17 +129,17 @@ public class Room {
 			return null;
 		}
 	}
-	
+
 	public boolean isConnected(int dir) {
-		switch(dir) {
+		switch (dir) {
 		case 1:
-			return northRoom!=null?true:false;
+			return northRoom != null ? true : false;
 		case 2:
-			return westRoom!=null?true:false;
+			return westRoom != null ? true : false;
 		case 3:
-			return southRoom!=null?true:false;
+			return southRoom != null ? true : false;
 		case 4:
-			return eastRoom!=null?true:false;
+			return eastRoom != null ? true : false;
 		default:
 			return false;
 		}
